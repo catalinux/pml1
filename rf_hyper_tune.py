@@ -19,13 +19,21 @@ Y_train = train["class"]
 
 X_test = test.drop('class', axis=1)
 Y_test = test["class"]
-
+imp = SimpleImputer(missing_values=np.nan, strategy='mean')
 from sklearn.model_selection import RandomizedSearchCV
 
+
+imp.fit(X_train)
+X_train = imp.transform(X_train)
+
+rf = RandomForestClassifier(n_estimators=100)
+rf.fit(X_train, Y_train)
+
+
 # Number of trees in random forest
-n_estimators = [int(x) for x in np.linspace(start=100, stop=2000, num=10)]
+n_estimators = [int(x) for x in np.linspace(start=200, stop=600, num=5)]
 # Number of features to consider at every split
-max_features = ['auto', 'sqrt']
+max_features = ['auto', 'sqrt', 'log2']
 # Maximum number of levels in tree
 max_depth = [int(x) for x in np.linspace(10, 110, num=11)]
 max_depth.append(None)
@@ -46,9 +54,7 @@ pprint(random_grid)
 rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_grid, n_iter=100, cv=3, verbose=2,
                                random_state=42, n_jobs=-1)
 
-
-# rf_random.fit(X_train, Y_train)
-
+rf_random.fit(X_train, Y_train)
 
 # {
 # 'n_estimators': 311,

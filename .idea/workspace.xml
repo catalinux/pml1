@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a4f63a0-672f-414f-a740-caa749dabbe2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate_pdf.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xgboost_compare.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xgboost_hyper_tune.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PML1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PML1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eda.py" beforeDir="false" afterPath="$PROJECT_DIR$/eda.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_pdf.bat" beforeDir="false" afterPath="$PROJECT_DIR$/generate_pdf.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.md" beforeDir="false" afterPath="$PROJECT_DIR$/report.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/report.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rf_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf_compare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rf_hyper_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf_hyper_tune.py" afterDir="false" />
@@ -60,7 +64,29 @@
       <recent name="C:\Users\cata\PycharmProjects\PML1\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.rf_compare">
+  <component name="RunManager" selected="Python.xgboost_compare">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="PML1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="eda" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PML1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,9 +110,6 @@
       <module name="PML1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -121,13 +144,51 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="rf_hyper_tune" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PML1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rf_hyper_tune.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="xgboost_compare" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PML1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xgboost_compare.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.rf_compare" />
+        <item itemvalue="Python.xgboost_compare" />
+        <item itemvalue="Python.xgboost_compare" />
+        <item itemvalue="Python.xgboost_compare" />
+        <item itemvalue="Python.xgboost_compare" />
         <item itemvalue="Python.eda" />
-        <item itemvalue="Python.eda" />
-        <item itemvalue="Python.rf" />
-        <item itemvalue="Python.rf" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +225,7 @@
       <workItem from="1575530372538" duration="2941000" />
       <workItem from="1575543630331" duration="13497000" />
       <workItem from="1575627294781" duration="4534000" />
-      <workItem from="1575639394249" duration="5413000" />
+      <workItem from="1575639394249" duration="19487000" />
     </task>
     <servers />
   </component>
@@ -172,14 +233,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1451" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575658336277">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1451" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1575658336277" />
     <state x="1499" y="474" key="FileChooserDialogImpl" timestamp="1575641528218">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1499" y="474" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1575641528218" />
-    <state x="1221" y="342" key="SettingsEditor" timestamp="1575383471905">
+    <state x="1221" y="342" key="SettingsEditor" timestamp="1575656164988">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1221" y="342" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1575383471905" />
+    <state x="1221" y="342" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1575656164988" />
+    <state width="1728" height="708" key="XDebugger.FullValuePopup" timestamp="1575651309720">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1728" height="708" key="XDebugger.FullValuePopup/0.0.3440.1400@0.0.3440.1400" timestamp="1575651309720" />
     <state x="1417" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1575639394264">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -194,8 +263,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/rf.py</url>
-          <line>42</line>
+          <line>43</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/rf_compare.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,9 +1,3 @@
-
-date: 7-10-2019
-....
-
-
-
 For this assigment I used the following supervised learning methods:
 
 - Random Forest
@@ -15,9 +9,9 @@ For this assigment I used the following supervised learning methods:
 ### Abstract
 
 According to the  datasets' description,  positive class consists of component failures for a specific component of the APS system. The negative class consists of trucks with failures for components not related to the APS.
-
 The attribute names of the data have been anonymized for proprietary reasons
 
+The dataset contains 170 features and 60000 samples for the training set 
 
 
 
@@ -25,8 +19,9 @@ The attribute names of the data have been anonymized for proprietary reasons
 
 During EDA the followings things were observed:
 
+- I had to skip some lines from the csv files because it contained description 
 - classes are strong imbalanced (98.3% are negative,  only 1.6 ) 
-- a lot of NA values
+- a lot of `NA` values
 - a lot of 0 values
 - some of the features tend to correlated beteen them (see the correlatioin matrix )
 
@@ -56,6 +51,14 @@ cost_confusion_matrix(cm)
 #Restult is 67700
 
 ```
+
+
+### Tuning hyperparameters
+
+To find the optimal hyperparameters, its commont to think of set of candidate hyper parameters, 
+train models and compare their performance via cross validation. Where there are many parameters `Randomized Search Cross Validation` is
+recommended [<sup>1</sup>](#ref1)
+
 
 
 We're doing a RandomSearchCV
@@ -120,7 +123,14 @@ Best parameters
  
 52690
 
-# Feature selection
+### Reducing dimensionality 
+
+
+One way of reducing dimensionality is by applying Principal Component Analysis (PCA). From the
 
 We try to reduce dimensionality and I used  `SelectFromModel`.  From 170 features, my model got down to 43 features  
 
+
+## Referencess 
+
+<a name="ref1"></a> 1. Géron, A. (2017), Hands-on machine learning with Scikit-Learn and TensorFlow : concepts, tools, and techniques to build intelligent systems , O'Reilly Media , Sebastopol, CA .

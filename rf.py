@@ -26,7 +26,8 @@ X_test = test.drop('class', axis=1)
 Y_test = test["class"]
 
 imp = SimpleImputer(missing_values=np.nan, strategy='mean')
-
+imp.fit(X_train)
+X_train = imp.transform(X_train)
 rf = RandomForestClassifier(n_estimators=100)
 rf.fit(X_train, Y_train)
 

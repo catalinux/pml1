@@ -25,22 +25,57 @@ Y_train = train["class"]
 X_test = test.drop('class', axis=1)
 Y_test = test["class"]
 
+conclusion = []
+
+
+def runByImputer(imp, X_train, Y_train, X_test, Y_test, prefix):
+    rf_ = [];
+    imp.fit(X_train)
+    X_imp_train = imp.transform(X_train)
+    basicRF = RandomForestClassifier(n_estimators=100)
+    basicRF.name = "basic"
+
+    tunnedRF = RandomForestClassifier(max_depth=None, n_estimators=311, min_samples_split=2, min_samples_leaf=1,
+                                      max_features='sqrt',
+                                      bootstrap=False, random_state=0)
+    tunnedRF.name = "tuned"
+    rf_.append(tunnedRF)
+    tunnedRFlog = RandomForestClassifier(max_depth=None, n_estimators=311, min_samples_split=2, min_samples_leaf=1,
+                                         max_features='log2',
+                                         bootstrap=False, random_state=0)
+    tunnedRFlog.name = "tuned-log"
+
+    rf_ = [basicRF, tunnedRF, tunnedRFlog]
+    for index, model in enumerate(rf_):
+        row = {}
+        model.fit(X_imp_train, Y_train)
+        X_imp_test = imp.transform(X_test)
+        Y_pred = model.predict(X_imp_test)
+        cr = classification_report(Y_test, Y_pred, output_dict=True)
+        cm = confusion_matrix(Y_test, Y_pred)
+        row['name'] = prefix + '_' + model.name
+        row["cost"] = cost_confusion_matrix(cm)
+        row["accuracy"] = accuracy_score(Y_test, Y_pred)
+        row["neg_precision"] = cr["neg"]["precision"]
+        row["neg_recall"] = cr["neg"]["recall"]
+        row["neg_f1_score"] = cr["neg"]["f1-score"]
+        row["pos_precision"] = cr["pos"]["precision"]
+        row["pos_recall"] = cr["pos"]["recall"]
+        row["pos_f1_score"] = cr["pos"]["f1-score"]
+        conclusion.append(row)
+
+
+def fone():
+    row = {}
+    row["name"] = 'a'
+    conclusion.append(row)
+
+
 imp = SimpleImputer(missing_values=np.nan, strategy='mean')
+runByImputer(imp, X_train, Y_train, X_test, Y_test, 'mean')
+imp = SimpleImputer(missing_values=np.nan, strategy='median')
+runByImputer(imp, X_train, Y_train, X_test, Y_test, 'median')
+imp = SimpleImputer(missing_values=np.nan, strategy='most_frequent')
+runByImputer(imp, X_train, Y_train, X_test, Y_test, 'most_frequent')
 
-imp.fit(X_train)
-X_imp_train = imp.transform(X_train)
-
-basicRF = RandomForestClassifier(n_estimators=100)
-tunnedRF = RandomForestClassifier(max_depth=70, n_estimators=40, min_samples_split=5, min_samples_leaf=1,
-                                  max_features='sqrt',
-                                  bootstrap=False, random_state=0)
-
-rf_ = [basicRF, tunnedRF]
-conclusion = np.empty(len(rf_), dtype=dict)
-for index, model in enumerate(rf_):
-    conclusion[index]={}
-    model.fit(X_imp_train, Y_train)
-    X_imp_test = imp.transform(X_test)
-    Y_pred = model.predict(X_imp_test)
-    cm = confusion_matrix(Y_test, Y_pred)
-    conclusion[index]["cost"] = cost_confusion_matrix(cm)
+pprint(conclusion)
