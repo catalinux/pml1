@@ -45,6 +45,8 @@ random_grid = {'n_estimators': n_estimators,
 pprint(random_grid)
 rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_grid, n_iter=100, cv=3, verbose=2,
                                random_state=42, n_jobs=-1)
+
+
 # rf_random.fit(X_train, Y_train)
 
 

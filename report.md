@@ -1,7 +1,16 @@
-# Scania trucks
-### Catalin Banu
+
+date: 7-10-2019
+....
 
 
+
+For this assigment I used the following supervised learning methods:
+
+- Random Forest
+- Extreme Gradient Boosting (XGBoost)  
+
+
+## Dataset
 
 ### Abstract
 
@@ -12,17 +21,27 @@ The attribute names of the data have been anonymized for proprietary reasons
 
 
 
-## Exploratory Data Analysis
+### Exploratory Data Analysis
 
-Loog
+During EDA the followings things were observed:
 
-![my caption](./images/unbalanced.jpg){ width=250px }
+- classes are strong imbalanced (98.3% are negative,  only 1.6 ) 
+- a lot of NA values
+- a lot of 0 values
+- some of the features tend to correlated beteen them (see the correlatioin matrix )
 
+
+![unbalaneced](./images/unbalanced.png){ width=250px } ![correlated](./images/corr.png){ width=250px }
 
 
 ## RandomForest Classifier
 
+### Description
 
+Random forests or random decision forests are an ensemble learning method for classification, regression and other tasks that operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes or mean prediction of the individual 
+
+
+### Basic model
 
 
 ```

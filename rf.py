@@ -27,7 +27,7 @@ Y_test = test["class"]
 
 imp = SimpleImputer(missing_values=np.nan, strategy='mean')
 
-rf = RandomForestClassifier(n_estimators=)
+rf = RandomForestClassifier(n_estimators=100)
 rf.fit(X_train, Y_train)
 
 imp.fit(X_test)
