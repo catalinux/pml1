@@ -2,18 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a4f63a0-672f-414f-a740-caa749dabbe2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xgboost_compare.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xgboost_hyper_tune.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PML1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PML1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conclusins.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/na_features_percentage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pca_explained_variance.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preamble.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rf_smote.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rf_test_and_fail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eda.py" beforeDir="false" afterPath="$PROJECT_DIR$/eda.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate_pdf.bat" beforeDir="false" afterPath="$PROJECT_DIR$/generate_pdf.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/plotting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/read.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/read.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.md" beforeDir="false" afterPath="$PROJECT_DIR$/report.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/report.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rf_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf_compare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rf_hyper_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf_hyper_tune.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xgboost_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/xgboost_compare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xgboost_hyper_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/xgboost_hyper_tune.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +57,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -64,7 +72,7 @@
       <recent name="C:\Users\cata\PycharmProjects\PML1\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.xgboost_compare">
+  <component name="RunManager" selected="Python.rf_compare">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="PML1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,25 +114,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rf" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PML1" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rf.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="rf_compare" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PML1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,7 +133,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rf_hyper_tune" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="rf_smote" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PML1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rf_smote.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rf_test_and_fail" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PML1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -154,7 +165,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rf_hyper_tune.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rf_test_and_fail.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.rf_compare" />
+        <item itemvalue="Python.rf_compare" />
         <item itemvalue="Python.xgboost_compare" />
+        <item itemvalue="Python.rf_compare" />
         <item itemvalue="Python.xgboost_compare" />
-        <item itemvalue="Python.xgboost_compare" />
-        <item itemvalue="Python.xgboost_compare" />
-        <item itemvalue="Python.eda" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +236,10 @@
       <workItem from="1575530372538" duration="2941000" />
       <workItem from="1575543630331" duration="13497000" />
       <workItem from="1575627294781" duration="4534000" />
-      <workItem from="1575639394249" duration="19487000" />
+      <workItem from="1575639394249" duration="21512000" />
+      <workItem from="1575662932288" duration="7922000" />
+      <workItem from="1575716655678" duration="5508000" />
+      <workItem from="1575722189477" duration="20497000" />
     </task>
     <servers />
   </component>
@@ -233,45 +247,110 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1451" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575658336277">
+    <state x="1451" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575711560844">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1451" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1575658336277" />
-    <state x="1499" y="474" key="FileChooserDialogImpl" timestamp="1575641528218">
+    <state x="1451" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1575711560844" />
+    <state x="967" y="452" key="#xdebugger.XInspectDialog" timestamp="1575740145136">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1499" y="474" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1575641528218" />
-    <state x="1221" y="342" key="SettingsEditor" timestamp="1575656164988">
+    <state x="967" y="452" key="#xdebugger.XInspectDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1575740145136" />
+    <state x="1676" y="805" width="1109" height="595" key="#xdebugger.evaluate" timestamp="1575726621406">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1221" y="342" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1575656164988" />
-    <state width="1728" height="708" key="XDebugger.FullValuePopup" timestamp="1575651309720">
+    <state x="1676" y="805" width="1109" height="595" key="#xdebugger.evaluate/0.0.3440.1400@0.0.3440.1400" timestamp="1575726621406" />
+    <state x="1361" y="478" width="717" height="482" key="EditFileWatcherDialog" timestamp="1575717521285">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1728" height="708" key="XDebugger.FullValuePopup/0.0.3440.1400@0.0.3440.1400" timestamp="1575651309720" />
-    <state x="1417" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1575639394264">
+    <state x="1361" y="478" width="717" height="482" key="EditFileWatcherDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1575717521285" />
+    <state x="1499" y="474" key="FileChooserDialogImpl" timestamp="1575740534825">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1417" y="524" key="com.intellij.ide.util.TipDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1575639394264" />
-    <state x="1383" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1575546589233">
+    <state x="1499" y="474" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1575740534825" />
+    <state width="1698" height="492" key="GridCell.Tab.0.bottom" timestamp="1575726626484">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1383" y="315" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1575546589233" />
+    <state width="1698" height="492" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1575726626484" />
+    <state width="1698" height="492" key="GridCell.Tab.0.center" timestamp="1575726626484">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1698" height="492" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1575726626484" />
+    <state width="1698" height="492" key="GridCell.Tab.0.left" timestamp="1575726626484">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1698" height="492" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1575726626484" />
+    <state width="1698" height="492" key="GridCell.Tab.0.right" timestamp="1575726626484">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1698" height="492" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1575726626484" />
+    <state width="1698" height="492" key="GridCell.Tab.1.bottom" timestamp="1575726626484">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1698" height="492" key="GridCell.Tab.1.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1575726626484" />
+    <state width="1698" height="492" key="GridCell.Tab.1.center" timestamp="1575726626484">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1698" height="492" key="GridCell.Tab.1.center/0.0.3440.1400@0.0.3440.1400" timestamp="1575726626484" />
+    <state width="1698" height="492" key="GridCell.Tab.1.left" timestamp="1575726626484">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1698" height="492" key="GridCell.Tab.1.left/0.0.3440.1400@0.0.3440.1400" timestamp="1575726626484" />
+    <state width="1698" height="492" key="GridCell.Tab.1.right" timestamp="1575726626484">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1698" height="492" key="GridCell.Tab.1.right/0.0.3440.1400@0.0.3440.1400" timestamp="1575726626484" />
+    <state x="1221" y="342" key="SettingsEditor" timestamp="1575717523603">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1221" y="342" key="SettingsEditor/0.0.3440.1400@0.0.3440.1400" timestamp="1575717523603" />
+    <state width="1728" height="708" key="XDebugger.FullValuePopup" timestamp="1575740141394">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1728" height="708" key="XDebugger.FullValuePopup/0.0.3440.1400@0.0.3440.1400" timestamp="1575740141394" />
+    <state x="1417" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1575722289057">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1417" y="524" key="com.intellij.ide.util.TipDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1575722289057" />
+    <state x="1416" y="305" width="607" height="789" key="find.popup" timestamp="1575719583523">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1416" y="305" width="607" height="789" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1575719583523" />
+    <state x="1361" y="426" width="700" height="530" key="recent.locations.popup" timestamp="1575717278825">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1361" y="426" width="700" height="530" key="recent.locations.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1575717278825" />
+    <state x="1383" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1575725382799">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1383" y="315" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1575725382799" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/rf.py</url>
-          <line>43</line>
+          <line>39</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/rf_compare.py</url>
-          <line>30</line>
+          <line>36</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/eda.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/rf_compare.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PML1$eda.coverage" NAME="eda Coverage Results" MODIFIED="1575725346725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

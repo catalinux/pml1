@@ -1,0 +1,44 @@
+[
+  {
+    "name": "mean_basic",
+    "cost": 52670,
+    "accuracy": 0.992375,
+    "neg_precision": 0.9933176350792338,
+    "neg_recall": 0.998912,
+    "neg_f1_score": 0.9961069627927757,
+    "pos_precision": 0.9407665505226481,
+    "pos_recall": 0.72,
+    "pos_f1_score": 0.8157099697885196
+  },
+  {
+    "name": "mean_tuned",
+    "cost": 48210,
+    "accuracy": 0.9926875,
+    "neg_precision": 0.9938853503184714,
+    "neg_recall": 0.998656,
+    "neg_f1_score": 0.9962649640861931,
+    "pos_precision": 0.93,
+    "pos_recall": 0.744,
+    "pos_f1_score": 0.8266666666666667
+  },
+  {
+    "name": "mean_tuned-scoring",
+    "cost": 49220,
+    "accuracy": 0.9925,
+    "neg_precision": 0.9937583593401694,
+    "neg_recall": 0.998592,
+    "neg_f1_score": 0.9961693162229458,
+    "pos_precision": 0.9264214046822743,
+    "pos_recall": 0.7386666666666667,
+    "pos_f1_score": 0.8219584569732938
+  },
+  {
+    "name": "median_basic",
+    "cost": 56630,
+    "accuracy": 0.992125,
+    "neg_precision": 0.9928139904610492,
+    "neg_recall": 0.999168,
+    "neg_f1_score": 0.9959808612440191,
+    "pos_precision": 0.9527272727272728,
+    "pos_recall": 0.6986666666666667,
+    "pos_f1_...

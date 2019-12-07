@@ -1,27 +1,20 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.impute import SimpleImputer
 from pprint import pprint
-from sklearn.feature_selection import SelectFromModel
 
+from sklearn.metrics import make_scorer
+import numpy as np
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.impute import SimpleImputer
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
 
-train = pd.read_csv("data/aps_failure_training_set.csv", na_values="na", skiprows=19)
-test = pd.read_csv("data/aps_failure_test_set.csv", na_values="na", skiprows=19)
-train["class"] = train["class"].astype("category")
-test["class"] = test["class"].astype("category")
+from lib.read import cost_confusion_matrix, my_scorer
 
-X_train = train.drop('class', axis=1)
-Y_train = train["class"]
+from lib.read import cost_confusion_matrix, read_data
 
-X_test = test.drop('class', axis=1)
-Y_test = test["class"]
+X_train, Y_train, X_test, Y_test = read_data()
+
 imp = SimpleImputer(missing_values=np.nan, strategy='mean')
-from sklearn.model_selection import RandomizedSearchCV
-
+from sklearn.model_selection import RandomizedSearchCV, StratifiedKFold
 
 imp.fit(X_train)
 X_train = imp.transform(X_train)
@@ -29,11 +22,10 @@ X_train = imp.transform(X_train)
 rf = RandomForestClassifier(n_estimators=100)
 rf.fit(X_train, Y_train)
 
-
 # Number of trees in random forest
-n_estimators = [int(x) for x in np.linspace(start=200, stop=600, num=5)]
+n_estimators = [int(x) for x in np.linspace(start=200, stop=600, num=2)]
 # Number of features to consider at every split
-max_features = ['auto', 'sqrt', 'log2']
+max_features = ['auto', 'sqrt']
 # Maximum number of levels in tree
 max_depth = [int(x) for x in np.linspace(10, 110, num=11)]
 max_depth.append(None)
@@ -51,7 +43,10 @@ random_grid = {'n_estimators': n_estimators,
                'min_samples_leaf': min_samples_leaf,
                'bootstrap': bootstrap}
 pprint(random_grid)
-rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_grid, n_iter=100, cv=3, verbose=2,
+skf = StratifiedKFold(n_splits=3, shuffle=True, random_state=1001)
+
+rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_grid, n_iter=100, cv=skf.split(X_train, Y_train), verbose=2,
+                               scoring=make_scorer(my_scorer, greater_is_better=False),
                                random_state=42, n_jobs=-1)
 
 rf_random.fit(X_train, Y_train)
