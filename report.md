@@ -1,3 +1,7 @@
+
+The task is to analyze data collected from heavy Scania trucks in everyday usage which might be correlated
+to Air Pressure System (APS) and to find a method to obtimize a cost given a formula based on miss classification
+
 For this assigment I used the following supervised learning methods:
 
 - Random Forest
@@ -8,10 +12,12 @@ For this assigment I used the following supervised learning methods:
 
 ### Abstract
 
-According to the  datasets' description,  positive class consists of component failures for a specific component of the APS system. The negative class consists of trucks with failures for components not related to the APS.
-The attribute names of the data have been anonymized for proprietary reasons
+From dataset's description:
 
-The dataset contains 170 features and 60000 samples for the training set 
+> According to the  datasets' description,  positive class consists of component failures for a specific component of the APS system. The negative class consists of trucks with failures for components not related to the APS.
+> The attribute names of the data have been anonymized for proprietary reasons
+
+> The dataset contains 170 features and 60000 samples for the training set 
 
 
 
@@ -24,7 +30,7 @@ During EDA the followings things were observed:
 - a lot of `NA` values
 - a lot of 0 values
 - some of the features tend to correlated beteen them (see the correlatioin matrix )
-- one column has 0 stand variation (cd_000)
+- one column has 0 standard variation (cd_000)
 - all features are numeric
 
 
@@ -49,11 +55,10 @@ Applying a simple model of RandomForestClassifier has  a result of  52670$ apply
 
 To find the optimal hyperparameters, its commont to think of set of candidate hyper parameters, 
 train models and compare their performance via cross validation. Where there are many parameters `Randomized Search Cross Validation` is
-recommended ^{[<sup>1</sup>]}(#ref1)
+recommended [<sup>1</sup>](#ref1)
 
 
-
-We're doing a RandomSearchCV to find best parameters for the model
+I'm doing a RandomSearchCV to find best parameters for the model
 
 ```
 {
@@ -83,7 +88,7 @@ Best parameters
 ```
 
 
-Having in mind the costs function for FP and FN I runned RandomSearch with a custom scoring function getting
+Having in mind the costs function for FP and FN, I runned RandomSearch with a custom scoring function getting
 different  parameterd and I got different parameters optimized for my model:  `max_depth=30, n_estimators=600`.
  
 
@@ -100,20 +105,21 @@ Using different imputation methods and  parameters obtained after RandomSearch
 | most_frequent_basic         | 50690 | 0.9925   | 0.9936        | 0.9962       | 0.9352        | 0.8204       |
 | most_frequent_tuned         | 48190 | 0.9928   | 0.9939        | 0.9963       | 0.9362        | 0.8291       |
 | most_frequent_tuned-scoring | 51190 | 0.9924   | 0.9935        | 0.9961       | 0.9349        | 0.8186       |
-| smote                       | 35220 | na       | na            | na           | na            | na           |
-| smote-pca                   | 31940 | na       | na            | na           | na            | na           |
+| smote-median                | 35220 | na       | na            | na           | na            | na           |
 
+
+From this moment I used mean imputer for all models. With more process power and time all the variations should
+be tried.
 
 ### Oversampling
 
-One of the problem of the data is the fact that classes are highly unblanced. Apply SMOTE (SYNTHETIC MINORITY OVERSAMPLING TECHNIQUE)
-added a big improovement  to our results  
+One of the problem of the data is the fact that classes are highly unbalanced. Applying SMOTE (SYNTHETIC MINORITY OVERSAMPLING TECHNIQUE)
+added a big improvement  to the results (see the above table) 
 
 ### Reducing dimensionality 
 
 
-One way of reducing dimensionality is by applying Principal Component Analysis (PCA). In this way we can see that we can 
-use less than half of the features (the most important one) and still have  
+One way of reducing dimensionality is by applying Principal Component Analysis (PCA). In this way we can see that we can have 80 featyre
 
 ![explained variance](./images/pca_explained_variance.png){ width=32% }
 
@@ -129,7 +135,27 @@ I tried  different number of components to be retained with PCA and results got 
 
 
 
-Combining oversampling with PCA got a much better cost until now, of 
+
+
+## Adjust the decision threshold
+
+The model is able to return probabilities for each class, so I can try to fit the right threshold that will balance
+one class or another
+
+``` 
+Y_prob = model.predict_proba(X_test_pca)
+
+t_values = [0.05, 0.6, 0.07, 0.08, 0.09, 0.1, 0.14, 0.2, 0.3]
+t_costs = []
+for t in t_values:
+    predicted = (Y_prob[:, 1] >= t).astype('int')
+    t_costs.append(cost_confusion_matrix(confusion_matrix(Y_test, predicted)))
+
+```
+
+And we'll get this plot and find the value `t_values[np.argmin(t_costs)]` of 0.07 getting a cost of 17920
+
+![threshold](./images/threshold_rf.png){width=35%}
 
 
 ## Extreme Gradient Boosting (XGBoost)
@@ -141,7 +167,7 @@ Extreme Gradient Boosting is also known as XGBoost. XGBoost is also an ensemble 
 
 ### Running against the data
 
-Using the same methods of RandomizedSearchCV  we get  better these results on un original data, with a cost og 44150$ vs 48190%. This time
+Using the same methods of RandomizedSearchCV  we get  better these results on un original data, with a cost of 44150$ vs 48190$. This time
 the model with parameters found using the custom score methods gave a better result
 
 | name           | cost  | accuracy | neg_precision | neg_f1_score | pos_precision | pos_f1_score |
@@ -170,15 +196,36 @@ XGBoost performed better than RandomForest from the begging and also after apply
 In order to achieve better results data processing is necessary and PCA was  a good method to achieve
 an improvement of 35% for XGBoost and 40% for Random Forest method  
 
+## Adjust the decision threshold
+
+Applyting same technique we as to Random Forest results I deteced a 0.02 value for threshold and a cost of 17610 (the lowest found in this paper)
+
+![xgboost threeshold](./images/xgboost_threeshold.png){width=35%}
+
 ## Conclusions
 
 Comparing to baseline model that would classify all trucks Ok which would have a cost of 187500$ for the test samples we obtained
-a cost of 26050$ 
+a cost of ***17610$*** 
 
 In order to speed development a developer should build a small library to be able to compare  results against different parameters
 
-Further workk should be made combining RandomizedSearchCV over processed dataset with feature reduction (PCA) and oversampling (SMOTE)  
+Dimensionality should be reduced at first in order to take less time in tunning hyper-parameters
 
+Further work should be made on:
+
+    - combining RandomizedSearchCV over processed dataset with feature reduction (PCA) and oversampling (SMOTE)  
+    - deeper analysis of data and feature engineering based on how features corelate with each other
+
+
+## Files in the project
+
+- eda.py - analyze data: na values, heatmap
+- rf_compare.py - different combinations of parameters for Random Forest
+- rf_threshold.py- applying threshold  + PCA  and finding best value for threshold
+- rf_hyper_tune.py - finding best params for RandormForest
+- xgboost_compare.py - different combination of parameters for XGBoost
+- xgboost_hyper_tune.py - finding best params for RandomForest.
+- xgboost_threshold.py  - finding the optimum threshold
 
 ## Referencess 
 

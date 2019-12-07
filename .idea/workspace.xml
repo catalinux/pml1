@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a4f63a0-672f-414f-a740-caa749dabbe2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conclusins.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/na_features_percentage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pca_explained_variance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/preamble.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rf_smote.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rf_test_and_fail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rf_threshold.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xgboost_threshold.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eda.py" beforeDir="false" afterPath="$PROJECT_DIR$/eda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_pdf.bat" beforeDir="false" afterPath="$PROJECT_DIR$/generate_pdf.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/read.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/pca_explained_variance.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/pca_explained_variance.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.md" beforeDir="false" afterPath="$PROJECT_DIR$/report.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/report.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rf_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf_compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rf_hyper_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/rf_hyper_tune.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xgboost_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/xgboost_compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xgboost_hyper_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/xgboost_hyper_tune.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +57,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cata\PycharmProjects\PML1" />
       <recent name="C:\Users\cata\PycharmProjects\PML1\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.rf_compare">
+  <component name="RunManager" selected="Python.xgboost_threshold">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="PML1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,29 +122,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rf_smote" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PML1" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rf_smote.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="rf_test_and_fail" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="rf_threshold" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PML1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -165,7 +132,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rf_test_and_fail.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rf_threshold.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,13 +160,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="xgboost_threshold" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PML1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xgboost_threshold.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.xgboost_threshold" />
+        <item itemvalue="Python.rf_threshold" />
+        <item itemvalue="Python.eda" />
         <item itemvalue="Python.rf_compare" />
         <item itemvalue="Python.rf_compare" />
-        <item itemvalue="Python.xgboost_compare" />
-        <item itemvalue="Python.rf_compare" />
-        <item itemvalue="Python.xgboost_compare" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +225,7 @@
       <workItem from="1575639394249" duration="21512000" />
       <workItem from="1575662932288" duration="7922000" />
       <workItem from="1575716655678" duration="5508000" />
-      <workItem from="1575722189477" duration="20497000" />
+      <workItem from="1575722189477" duration="28572000" />
     </task>
     <servers />
   </component>
@@ -263,9 +249,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1361" y="478" width="717" height="482" key="EditFileWatcherDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1575717521285" />
-    <state x="1499" y="474" key="FileChooserDialogImpl" timestamp="1575740534825">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state x="627" y="291" key="FileChooserDialogImpl" timestamp="1575753979360">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
+    <state x="627" y="291" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1575753979360" />
     <state x="1499" y="474" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1575740534825" />
     <state width="1698" height="492" key="GridCell.Tab.0.bottom" timestamp="1575726626484">
       <screen x="0" y="0" width="3440" height="1400" />
@@ -315,9 +302,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1416" y="305" width="607" height="789" key="find.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1575719583523" />
-    <state x="1361" y="426" width="700" height="530" key="recent.locations.popup" timestamp="1575717278825">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state x="570" y="262" width="598" height="448" key="recent.locations.popup" timestamp="1575749864959">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
+    <state x="570" y="262" width="598" height="448" key="recent.locations.popup/0.0.1440.860@0.0.1440.860" timestamp="1575749864959" />
     <state x="1361" y="426" width="700" height="530" key="recent.locations.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1575717278825" />
     <state x="1383" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1575725382799">
       <screen x="0" y="0" width="3440" height="1400" />

@@ -67,7 +67,7 @@ def runByImputer(X_train, Y_train, X_test, Y_test, prefix):
 
 pprint(conclusion)
 
-modelAfterPCA = RandomForestClassifier(max_depth=None, n_estimators=311, min_samples_split=2, min_samples_leaf=1,
+modelAfterPCA = RandomForestClassifier(max_depth=30, n_estimators=600, min_samples_split=2, min_samples_leaf=1,
                                        max_features='sqrt',
                                        bootstrap=False, random_state=0, n_jobs=4)
 
@@ -113,7 +113,7 @@ def get_pca_model_smote(n_c):
 
     modelAfterPCA.fit(X_train_sampled, X_train_sampled)
     Y_pred = modelAfterPCA.predict(X_test_pca)
-    row = get_conclusion(Y_pred, Y_test, "smothe-pca" + str(n_c))
+    row = get_conclusion(Y_pred, Y_test, "smote-pca" + str(n_c))
     return row
 
     # row = get_pca_model(100)

@@ -47,7 +47,7 @@ std = StandardScaler()
 from sklearn.decomposition import PCA
 
 X_train_std = std.fit_transform(X_imp_train)
-X_train_pca = PCA(n_components=100, random_state=42)
+X_train_pca = PCA(n_components=160, random_state=42)
 X_train_pca.fit_transform(X_train_std)
 
 sns.lineplot(data=np.cumsum(X_train_pca.explained_variance_ratio_))
@@ -56,14 +56,14 @@ plt.ylabel("Cumulative explained variance")
 plt.title("85% of  variance is explained by about 60 components")
 plt.show()
 
-X_train_pca = PCA(n_components=50, random_state=42)
-a = X_train_pca.fit_transform(X_train_std)
-
-df_a = pd.DataFrame(a)
-f = plt.figure(figsize=(19, 15))
-plt.matshow(df_a.corr(), fignum=f.number)
-cb = plt.colorbar()
-plt.show()
+# X_train_pca = PCA(n_components=50, random_state=42)
+# a = X_train_pca.fit_transform(X_train_std)
+#
+# df_a = pd.DataFrame(a)
+# f = plt.figure(figsize=(19, 15))
+# plt.matshow(df_a.corr(), fignum=f.number)
+# cb = plt.colorbar()
+# plt.show()
 
 
 rf = RandomForestClassifier(max_depth=30, n_estimators=600, min_samples_split=2, min_samples_leaf=1,
